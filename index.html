@@ -18,14 +18,14 @@
 <body>
   <!-- cabeçalho -->
   <div class="container" id="app">
-    <div class="row text-center">
+    <div class="row text-center cabecalho">
       <div class="col-md">
         <h1>Tentando criar uma lista de tarefas</h1>
       </div>
     </div>
 
     <!-- Input de Tarefas -->
-    <div class="row justify-content-center">
+    <div class="row justify-content-center inputSpace">
       <div class="col-8">
         <div class="input-group">
           <input v-model="novaTarefa.title" type="text" class="form-control" placeholder="Nova tarefa"
@@ -41,19 +41,24 @@
 
     <!-- Lista de Tarefas -->
     <div class="row justify-content-center">
-
-      <h4>Tarefas Pendentes</h4>
+      <h4 class="h4space">Tarefas Pendentes</h4>
     </div>
-    <div class="row">
-      <div class="col-xs-10 col-sm-10 col-md-6 col-lg-4" v-for="tarefa in tarefas" v-if="tarefa.estado === false">
-        <div class="card mb-3">
-          <div class="card-body">
-            {{tarefa.title}}
-          </div>
-          <div class="card-footer">
-            <button type="button" class="btn btn-success" @click="alterarStatus(tarefa)">
-              <span><i class="fa fa-check-circle" aria-hidden="true"></i></span>
-            </button>
+
+    <div class="jumbotron jumboColor">
+      <div class="row">
+        <div class="col-xs-10 col-sm-10 col-md-6 col-lg-4" v-for="tarefa in tarefas" v-if="tarefa.estado === false">
+          <div class="card mb-3 cardStyle">
+            <div class="card-body">
+              {{tarefa.title}}
+            </div>
+            <div class="card-footer buttonSpace">
+              <button type="button" class="btn btn-success" @click="alterarStatus(tarefa)">Concluído
+                <span><i class="fa fa-check-circle" aria-hidden="true"></i></span>
+              </button>
+              <button type="button" class="btn btn-danger" @click="removerTarefa(tarefa)">Remover
+                <span><i class="fa fa-trash" aria-hidden="true"></i></span>
+              </button>
+            </div>
           </div>
         </div>
       </div>
@@ -61,22 +66,24 @@
 
     <!-- Lista de Tarefas -->
     <div class="row justify-content-center">
-
-      <h4>Tarefas Concluidas</h4>
+      <h4 class="h4space">Tarefas Concluidas</h4>
     </div>
-    <div class="row">
-      <div class="col-xs-10 col-sm-10 col-md-6 col-lg-4" v-for="tarefa in tarefas" v-if="tarefa.estado === true">
-        <div class="card mb-3">
-          <div class="card-body">
-            {{tarefa.title}}
-          </div>
-          <div class="card-footer buttonSpace">
-            <button type="button" class="btn btn-warning" @click="alterarStatus(tarefa)">
-              <span><i class="fa fa-times" aria-hidden="true"></i></span>
-            </button>
-            <button type="button" class="btn btn-danger" @click="removerTarefa(tarefa)">
-              <span><i class="fa fa-trash" aria-hidden="true"></i></span>
-            </button>
+
+    <div class="jumbotron jumboColor">
+      <div class="row">
+        <div class="col-xs-10 col-sm-10 col-md-6 col-lg-4" v-for="tarefa in tarefas" v-if="tarefa.estado === true">
+          <div class="card mb-3 cardStyle">
+            <div class="card-body">
+              {{tarefa.title}}
+            </div>
+            <div class="card-footer buttonSpace">
+              <button type="button" class="btn btn-warning text-color" @click="alterarStatus(tarefa)">Pendente
+                <span><i class="fa fa-times" aria-hidden="true"></i></span>
+              </button>
+              <button type="button" class="btn btn-danger" @click="removerTarefa(tarefa)">Remover
+                <span><i class="fa fa-trash" aria-hidden="true"></i></span>
+              </button>
+            </div>
           </div>
         </div>
       </div>

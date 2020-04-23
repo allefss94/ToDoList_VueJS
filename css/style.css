@@ -1,3 +1,6 @@
+body{
+    background-color: #f1f1f1;
+}
 
 h4{
     display: flex;
@@ -7,4 +10,37 @@ h4{
 .buttonSpace{
     display: flex;
     justify-content: space-between;
+}
+
+.cabecalho{
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.inputSpace{
+    margin-bottom: 50px;
+}
+
+.h4space{
+    margin-bottom: 25px;
+}
+
+.jumboColor{
+    background-color: #d9acff;
+    -webkit-box-shadow: 6px 6px 13px -5px rgba(0,0,0,0.75);
+    -moz-box-shadow: 6px 6px 13px -5px rgba(0,0,0,0.75);
+    box-shadow: 6px 6px 13px -5px rgba(0,0,0,0.75);
+}
+
+.cardStyle{
+    -webkit-box-shadow: 6px 6px 13px -5px rgba(0,0,0,0.75);
+    -moz-box-shadow: 6px 6px 13px -5px rgba(0,0,0,0.75);
+    box-shadow: 6px 6px 13px -5px rgba(0,0,0,0.75);
+}
+
+.text-color{
+    color: white;
+}
+.text-color:hover{
+    color: white;
 }
